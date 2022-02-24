@@ -53,17 +53,8 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  let childArr = charArray.sort((a, b) => {
-    return a.children - b.children;
-  }); 
-  let finalArr = childArr.sort((a, b) => {
-    let objA = a.house.toUpperCase();
-    let objB = b.house.toUpperCase();
-    return (objA < objB) ? -1 : (objA > objB) ? 1 : 0;
-  });
-  return finalArr;
+  return charArray.sort((firstHouse, secondHouse) => (firstHouse.children.length > secondHouse.children.length) ? 1 : -1);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
