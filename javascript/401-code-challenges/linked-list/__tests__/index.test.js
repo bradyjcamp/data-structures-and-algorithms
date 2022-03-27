@@ -17,6 +17,7 @@ describe('Linked List', () => {
 
   test('head should point to first node in linked list', () => {
 
+    expect(ll.head.value).toEqual('A');
     expect(ll.head.next).toEqual(null);
   });
 
@@ -30,7 +31,7 @@ describe('Linked List', () => {
 
   test('return true when value found within linked list', () => {
 
-    expect(ll.includes('A')).toEqual(true);
+    expect(ll.includes('B')).toEqual(true);
   });
 
   test('return false when value is not found within linked list', () => {
@@ -40,7 +41,7 @@ describe('Linked List', () => {
 
   test('return a collection of all values that exist in linked list', () => {
 
-    expect(ll.toString()).toEqual('[A] -> [B] -> [C] -> NULL');
+    expect(ll.toString()).toEqual('[B] -> [C] -> NULL');
   });
 
 });

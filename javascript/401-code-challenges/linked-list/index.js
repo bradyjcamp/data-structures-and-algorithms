@@ -14,8 +14,17 @@ class LinkedList {
 
   insert(value){
     let newNode = new Node(value);
-    this.head = newNode;
+
+    if (this.head ===null){
+      this.head = newNode;
+    } else{
+      while(this.head.next !== null){
+        this.head = this.head.next;
+      }
+      this.head.next = newNode;
+    }
   }
+
 
   includes(value){
     let current = this.head;
@@ -37,7 +46,7 @@ class LinkedList {
       str += `[${current.value}] -> `;
       current = current.next;
     }
-    return `${str} NULL`;
+    return `${str}NULL`;
   }
 }
 
