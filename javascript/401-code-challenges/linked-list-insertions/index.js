@@ -12,42 +12,58 @@ class LinkedList {
     this.head = null;
   }
 
-  insert(value){
-    let newNode = new Node(value);
-
-    if (this.head ===null){
-      this.head = newNode;
-    } else{
-      while(this.head.next !== null){
-        this.head = this.head.next;
-      }
-      this.head.next = newNode;
-    }
-  }
-
-
-  includes(value){
+  traverse(cb){
+    let result;
     let current = this.head;
-    while (current !== null){
-      if(current.value === value){
-        return true;
-      } else {
-        current = current.next;
-      }
-    }
-    return false;
 
-  }
-
-  toString(){
-    let current = this.head;
-    let str = '';
-    while (current !== null){
-      str += `[${current.value}] -> `;
+    while(current !== null){
+      result.push(cb(current.value));
       current = current.next;
     }
-    return `${str}NULL`;
+    return result;
+  }
+
+  append(value){
+    let newNode = new Node(value);
+
+    if(this.head === null){
+      this.head = newNode;
+      return this.head;
+    }
+    let current = this.head;
+    while(current.next){
+      current = current.next;
+    }
+    current.next = newNode;
+    return this.head;
+  }
+
+  insertBefore(targetValue, newValue){
+    let newNode = new Node(newValue);
+    let current = this.head;
+
+    while(current.next.value !== targetValue){
+      current = current.next;
+    }
+    newNode.next = current.next;
+    current.next = newNode;
+  }
+
+  insertAfter(targetValue, newValue){
+    let newNode = new Node(newValue);
+    // let targetNode = {};
+    let current = this.head;
+
+    while(current.value !== targetValue){
+      current = current.next;
+    }
+    newNode.next = current.next;
+    current.next = newNode;
   }
 }
 
-module.exports= LinkedList;
+
+module.exports={
+  LinkedList,
+  Node,
+};

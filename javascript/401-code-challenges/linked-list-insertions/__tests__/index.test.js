@@ -1,47 +1,58 @@
 'use strict';
 
-const LinkedList = require('../index');
+const { LinkedList, Node } = require('../index');
+
 
 describe('Linked List', () => {
-  let ll = new LinkedList;
+  let ll = new LinkedList();
 
-  test('Should create an empty linked list', () => {
-    expect(ll.head).toEqual(null);
+  test('Should add a node to the end of a linked list', () => {
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(2);
+    expect(ll.head.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next).toBeFalsy();
   });
 
-  test('Should insert into a linked list', () => {
-    ll.insert('A');
+  test('Should insert a node before a node located in the middle of a linked list', () => {
+    ll.insertBefore(2, 10);
 
-    expect(ll.head.value).toEqual('A');
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(10);
+    expect(ll.head.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.value).toEqual(3);
   });
 
-  test('head should point to first node in linked list', () => {
+  test('Should insert a node before a node located at the beginnning of a linked list', () => {
+    ll.insertBefore(1, 11);
 
-    expect(ll.head.value).toEqual('A');
-    expect(ll.head.next).toEqual(null);
+    expect(ll.head.value).toEqual(11);
+    expect(ll.head.next.value).toEqual(1);
+    expect(ll.head.next.next.value).toEqual(10);
+    expect(ll.head.next.next.next.value).toEqual(2);
   });
 
-  test('can insert multiple nodes into linked list', () => {
-    ll.insert('B');
-    ll.insert('C');
+  test('Should insert a node after a node located in the middle of a linked list', () => {
+    ll.insertAfter(2, 12);
 
-    expect(ll.head.value).toEqual('B');
-    expect(ll.head.next.value).toEqual('C');
+    expect(ll.head.value).toEqual(11);
+    expect(ll.head.next.value).toEqual(1);
+    expect(ll.head.next.next.value).toEqual(10);
+    expect(ll.head.next.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.next.value).toEqual(12);
   });
 
-  test('return true when value found within linked list', () => {
+  test('Should insert a node after a node located at the end of a linked list', () => {
+    ll.insertAfter(3, 13);
 
-    expect(ll.includes('B')).toEqual(true);
+    expect(ll.head.value).toEqual(11);
+    expect(ll.head.next.value).toEqual(1);
+    expect(ll.head.next.next.value).toEqual(10);
+    expect(ll.head.next.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.next.value).toEqual(12);
+    expect(ll.head.next.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next.next.value).toEqual(13);
   });
-
-  test('return false when value is not found within linked list', () => {
-
-    expect(ll.includes(30000)).toEqual(false);
-  });
-
-  test('return a collection of all values that exist in linked list', () => {
-
-    expect(ll.toString()).toEqual('[B] -> [C] -> NULL');
-  });
-
 });
