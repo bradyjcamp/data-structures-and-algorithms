@@ -4,7 +4,7 @@
 
 ## Challenge
 
-[Solution](/linked-list/index.js)
+[Solution](/javascript/401-code-challenges/linked-list/index.js)
 
 ### Node
 

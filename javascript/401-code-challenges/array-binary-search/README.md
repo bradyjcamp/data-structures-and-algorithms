@@ -8,7 +8,7 @@ NOTE: The search algorithm used in your function should be a binary search
 
 ## Whiteboard
 
-![Whiteboard](/array-binary-search/array-binary-search.png)
+![Whiteboard](/javascript/401-code-challenges/array-binary-search/array-binary-search.png)
 
 ## Approach & Efficiency
 

@@ -6,7 +6,7 @@ Write a function called reverseArray which takes an array as an argument. Withou
 
 ## Whiteboard
 
-![Whiteboard](/array-reverse/array-reverse.png)
+![Whiteboard](/javascript/401-code-challenges/array-reverse/array-reverse.png)
 
 ## Approach & Efficiency
 

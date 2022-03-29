@@ -6,7 +6,7 @@ Write a function called insertShiftArray which takes in an array and a value to 
 
 ## Whiteboard
 
-![Whiteboard](/array-insert-shift/array-insert-shift.png)
+![Whiteboard](/javascript/401-code-challenges/array-insert-shift/array-insert-shift.png)
 
 ## Approach & Efficiency
 
