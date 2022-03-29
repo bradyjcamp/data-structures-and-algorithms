@@ -7,7 +7,7 @@ These will add new nodes, insert before target node, and insert after target nod
 
 ## Whiteboard
 
-![Whiteboard](/linked-list-insertion.png)
+![Whiteboard](/linked-list-insertions/linked-list-insertion.png)
 
 ## Approach & Efficiency
 
@@ -18,8 +18,8 @@ Space Complexity: O(n)
 
 ## Solution
 
-[Code](/index.js)
-[Testing](/__tests__/index.test.js)
+- [Code](/linked-list-insertions/index.js)
+- [Testing](/linked-list-insertions/__tests__/index.test.js)
 
 ### Checklist
 
