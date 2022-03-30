@@ -10,7 +10,6 @@ class Node {
 class LinkedList {
   constructor(){
     this.head = null;
-    this.count=0;
 
   }
 
@@ -87,23 +86,6 @@ class LinkedList {
     }
     return list[k];
   }
-
-
-  //   let current = this.head;
-  //   let targetNode = this.count - k;
-  //   if (k < 0) {
-  //     return null;
-  //   }
-  //   if (k === 1) {
-  //     return this.head.value;
-  //   }
-  //   while (targetNode) {
-  //     current = current.next;
-  //     targetNode--;
-  //   }
-  //   return current.value;
-  // }
-
 }
 
 
