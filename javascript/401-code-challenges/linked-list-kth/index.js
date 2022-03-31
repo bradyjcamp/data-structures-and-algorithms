@@ -10,7 +10,6 @@ class Node {
 class LinkedList {
   constructor(){
     this.head = null;
-    this.count=0;
 
   }
 
@@ -30,54 +29,37 @@ class LinkedList {
 
     if(this.head === null){
       this.head = newNode;
+      return this.head;
     }
     let current = this.head;
     while(current.next){
       current = current.next;
     }
     current.next = newNode;
-    current.next.next = null;
+    return this.head;
   }
 
   insertBefore(targetValue, newValue){
     let newNode = new Node(newValue);
     let current = this.head;
-    console.log(current);
-    if(this.head === targetValue){
-      newNode.next = this.head;
-      this.head = newNode;
-    }
 
     while(current.next.value !== targetValue){
       current = current.next;
     }
-    let temp = current.next;
+    newNode.next = current.next;
     current.next = newNode;
-    current.next.next = temp;
-
   }
 
   insertAfter(targetValue, newValue){
     let newNode = new Node(newValue);
-
+    // let targetNode = {};
     let current = this.head;
 
     while(current.value !== targetValue){
       current = current.next;
     }
-    let temp = current.next;
+    newNode.next = current.next;
     current.next = newNode;
-    current.next.next = temp;
-  }
-
-  toString(){
-    let current = this.head;
-    let str = '';
-    while (current !== null){
-      str += `[${current.value}] -> `;
-      current = current.next;
-    }
-    return `${str}NULL`;
   }
 
 
@@ -104,23 +86,6 @@ class LinkedList {
     }
     return list[k];
   }
-
-
-  //   let current = this.head;
-  //   let targetNode = this.count - k;
-  //   if (k < 0) {
-  //     return null;
-  //   }
-  //   if (k === 1) {
-  //     return this.head.value;
-  //   }
-  //   while (targetNode) {
-  //     current = current.next;
-  //     targetNode--;
-  //   }
-  //   return current.value;
-  // }
-
 }
 
 
