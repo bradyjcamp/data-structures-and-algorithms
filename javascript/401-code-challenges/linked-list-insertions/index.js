@@ -28,37 +28,54 @@ class LinkedList {
 
     if(this.head === null){
       this.head = newNode;
-      return this.head;
     }
     let current = this.head;
     while(current.next){
       current = current.next;
     }
     current.next = newNode;
-    return this.head;
+    current.next.next = null;
   }
 
   insertBefore(targetValue, newValue){
     let newNode = new Node(newValue);
     let current = this.head;
+    console.log(current);
+    if(this.head === targetValue){
+      newNode.next = this.head;
+      this.head = newNode;
+    }
 
     while(current.next.value !== targetValue){
       current = current.next;
     }
-    newNode.next = current.next;
+    let temp = current.next;
     current.next = newNode;
+    current.next.next = temp;
+
   }
 
   insertAfter(targetValue, newValue){
     let newNode = new Node(newValue);
-    // let targetNode = {};
+
     let current = this.head;
 
     while(current.value !== targetValue){
       current = current.next;
     }
-    newNode.next = current.next;
+    let temp = current.next;
     current.next = newNode;
+    current.next.next = temp;
+  }
+
+  toString(){
+    let current = this.head;
+    let str = '';
+    while (current !== null){
+      str += `[${current.value}] -> `;
+      current = current.next;
+    }
+    return `${str}NULL`;
   }
 }
 
