@@ -43,17 +43,17 @@ class LinkedList {
     let newNode = new Node(newValue);
     let current = this.head;
     console.log(current);
-    if(this.head === targetValue){
+    if(this.head !== targetValue){
+      while(current.next.value !== targetValue){
+        current = current.next;
+      }
+      let temp = current.next;
+      current.next = newNode;
+      current.next.next = temp;
+    } else{
       newNode.next = this.head;
       this.head = newNode;
     }
-
-    while(current.next.value !== targetValue){
-      current = current.next;
-    }
-    let temp = current.next;
-    current.next = newNode;
-    current.next.next = temp;
 
   }
 
