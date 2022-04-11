@@ -1,14 +1,15 @@
 'use strict';
 
-const { Animal, Cat, Dog, AnimalShelter } = require('../index.js');
+const { Dog, AnimalShelter } = require('../index.js');
 
 describe('testing AnimalShelter', () => {
 
-  test('Should enqueue cat', () => {
+  test('Should enqueue dog', () => {
     let shelter = new AnimalShelter;
     let dog = new Dog(1);
 
     shelter.enqueue(dog);
-    expect(shelter.length).toEqual(1);
+    console.log(shelter.shelter.front.value);
+    expect(shelter.shelter.front.value).toEqual({'next': null, 'type': 'dog', 'value': 1});
   });
 });

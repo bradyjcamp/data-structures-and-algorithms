@@ -1,7 +1,6 @@
 'use strict';
 
-const { prev } = require('cheerio/lib/api/traversing');
-const Queue = require('../stack-and-queue/index.js');
+const { Queue } = require('../stack-and-queue/index.js');
 
 class Animal {
   constructor(value){
