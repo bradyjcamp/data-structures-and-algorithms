@@ -23,7 +23,6 @@ Instantiated a Stack and Queue by creating methods for each and testing expected
 
 ## API
 
-
 - `enqueue()`
   - argument: value
   - adds a new node with that value to the back of the queue with an O(1) Time performance.
@@ -32,7 +31,6 @@ Instantiated a Stack and Queue by creating methods for each and testing expected
   - Returns: the value from node from the front of the queue
   - Removes the node from the front of the queue
   - Should raise exception when called on empty queue
-
 
 ## Solution
 
