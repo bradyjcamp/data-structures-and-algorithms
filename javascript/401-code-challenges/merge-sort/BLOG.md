@@ -1,6 +1,9 @@
 # Merge Sort
 
-This 
+- This function takes an array and destructures it into 3 different values.
+  - `mid` gets set to the middle of the array `arr.length/2`
+  - `left` is all index values left of mid.
+  - `right` is all index values right of mid.
 
 ## Pseudocode
 
@@ -39,3 +42,11 @@ ALGORITHM Merge(left, right, arr)
     else
        set remaining entries in arr to remaining values in left
 ```
+
+## Whiteboard
+
+![Whiteboard](/javascript/401-code-challenges/merge-sort/merge-sort.png)
+
+## Code
+
+-[Code](/javascript/401-code-challenges/merge-sort/index.js)
