@@ -39,7 +39,7 @@ ALGORITHM Swap(arr, i, low)
 
 ## Whiteboard
 
-![Whiteboard](/javascript/401-code-challenges/quick-sort/quick-sort.png)
+![Whiteboard](/javascript/401-code-challenges/quick-sort/quick-sort-final.png)
 
 ## Code
 
