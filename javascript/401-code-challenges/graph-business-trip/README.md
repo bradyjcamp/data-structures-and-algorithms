@@ -22,9 +22,11 @@ The Space Complexity is O(1);
 
 ### Checklist
 
+
 - [x] Create BusinessTrip Function
 - [x] Create tests for function
 - [x] Pass all tests
+
 
 ## API
 
