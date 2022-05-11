@@ -2,7 +2,7 @@
 
 class Vertex {
   constructor(value) {
-    this.value =  value;
+    this.value = value;
   }
 }
 
@@ -25,11 +25,11 @@ class Graph {
     return vertex;
   }
 
-  addDirectedEdge(startVertex, endVertex) {
+  addDirectedEdge(startVertex, endVertex, weight) {
     // find the node we want to connect.
 
     const neighbors = this.adjacencyList.get(startVertex);
-    neighbors.push(new Edge(endVertex));
+    neighbors.push(new Edge(endVertex, weight));
   }
 
   getNeighbors(vertex) {
@@ -94,6 +94,7 @@ class Graph {
 
     return visited;
   }
+
 }
 
 module.exports = {
