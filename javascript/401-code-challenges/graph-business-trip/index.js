@@ -1,5 +1,4 @@
 'use strict';
-
 class Vertex {
   constructor(value) {
     this.value = value;
@@ -36,12 +35,11 @@ class Graph {
     return [...this.adjacencyList.get(vertex)];
   }
 
-  getNodes(){
+  getNodes() {
     return [...this.adjacencyList.keys()];
-
   }
 
-  getSize(){
+  getSize() {
     return [...this.adjacencyList.keys()].length;
   }
 
@@ -70,7 +68,6 @@ class Graph {
   }
 
   depthFirst(root, cb) {
-
     const stack = [root];
     const visited = new Set();
     visited.add(root);
@@ -95,11 +92,24 @@ class Graph {
     return visited;
   }
 
+  businessTrip(graph, array) {
+    let FirstCity = graph.adjacencyList.get(array[0]);
+
+    let neighbors = getNeighbors(FirstCity);
+    const visited = new Set();
+    visited.add(graph);
+
+    for (let edge of neighbors) {
+      if (!visited.has(edge.vertex)) {
+        visited.add(edge.vertex);
+        return [true];
+      } else return false;
+    }
+  }
 }
 
 module.exports = {
   Graph,
-  Edge,
-  Vertex
+  Vertex,
+  Edge
 };
-
