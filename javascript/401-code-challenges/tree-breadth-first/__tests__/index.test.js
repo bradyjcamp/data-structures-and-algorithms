@@ -2,21 +2,23 @@
 
 const breadthFirst = require('../index.js');
 
-const { BinarySearchTree } = require('../../binary-search-tree/index.js');
+const { BinaryTree, Node } = require('../../binary-tree/index.js');
 
 describe('Breadth First Function', () => {
 
   test('Should return values in tree', () => {
-    let tree = new BinarySearchTree();
-    let arr = [];
-    tree.add(5);
-    tree.add(10);
-    tree.add(15);
-    tree.add(20);
-    tree.add(25);
-    tree.add(30);
-    breadthFirst(tree);
+    let tree = new BinaryTree();
+    tree.root = new Node(10);
+    tree.root.left = new Node(4);
+    tree.root.right = new Node(40);
+    tree.root.left.left = new Node(1);
+    tree.root.left.right = new Node(7);
+    tree.root.left.right.right = new Node(9);
+    tree.root.right.right = new Node(56);
+    tree.root.right.left = new Node(30);
 
-    expect(arr).toEqual([5, 15, 10, 20, 25, 30]);
+    let results = breadthFirst(tree);
+
+    expect(results).toEqual([10, 4, 40, 1, 7, 30, 56, 9]);
   });
 });

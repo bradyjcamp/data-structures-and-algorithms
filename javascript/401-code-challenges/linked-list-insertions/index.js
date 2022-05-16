@@ -14,12 +14,12 @@ class LinkedList {
 
   }
 
-  traverse(cb){
-    let result;
+  traverse(){
+    let result = [];
     let current = this.head;
 
-    while(current !== null){
-      result.push(cb(current.value));
+    while(current){
+      result.push(current.value);
       current = current.next;
     }
     return result;
@@ -42,7 +42,7 @@ class LinkedList {
   insertBefore(targetValue, newValue){
     let newNode = new Node(newValue);
     let current = this.head;
-    console.log(current);
+
     if(this.head !== targetValue){
       while(current.next.value !== targetValue){
         current = current.next;
@@ -73,7 +73,7 @@ class LinkedList {
   toString(){
     let current = this.head;
     let str = '';
-    while (current !== null){
+    while (current){
       str += `[${current.value}] -> `;
       current = current.next;
     }
@@ -88,16 +88,9 @@ class LinkedList {
     if (k < 0) {
       return null;
     }
-    if (k === 1) {
-      return this.head.value;
-    }
-    while (current.next) {
+    while (current) {
       list.unshift(current.value);
       current = current.next;
-    }
-    list.unshift(current.value);
-    if (k > list.length) {
-      return null;
     }
     if (k > list.length - 1) {
       return null;
@@ -107,6 +100,16 @@ class LinkedList {
 
 
 }
+
+let ll = new LinkedList();
+
+ll.append(1);
+ll.append(2);
+ll.append(3);
+ll.append(4);
+ll.append(5);
+ll.append(6);
+console.log(ll.kthMethod(5));
 
 
 module.exports={

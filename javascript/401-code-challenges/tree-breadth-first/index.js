@@ -4,23 +4,25 @@ const { Queue } = require('../stack-and-queue/index.js');
 
 module.exports = function breadthFirst(tree){
 
-  let treeQueue = new Queue();
+  let current = tree.root;
+  let queue = new Queue();
   let arr = [];
-
-  if(!treeQueue.front){
-    treeQueue.enqueue(tree.root);
+  if(current){
+    queue.enqueue(current);
   }
-  while(!treeQueue.isEmpty()){
-    let front = treeQueue.dequeue();
-    arr.push(front.value);
-    if(front.left){
-      treeQueue.enqueue(front.left);
+  while(!queue.isEmpty()){
+    current = queue.dequeue();
+    arr.push(current.value);
+    if(current.left){
+      queue.enqueue(current.left);
     }
-    if (front.right){
-      treeQueue.enqueue(front.right);
+    if (current.right){
+      queue.enqueue(current.right);
     }
   }
   return arr;
 
 };
+
+
 

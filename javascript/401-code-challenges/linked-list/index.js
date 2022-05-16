@@ -10,6 +10,7 @@ class Node {
 class LinkedList {
   constructor(){
     this.head = null;
+    this.tail = null;
   }
 
   insert(value){
@@ -18,7 +19,7 @@ class LinkedList {
     if (this.head ===null){
       this.head = newNode;
     } else{
-      while(this.head.next !== null){
+      while(this.head.next){
         this.head = this.head.next;
       }
       this.head.next = newNode;
